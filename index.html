@@ -7,39 +7,17 @@
 </head>
 
 <body>
-    <h1>Hello,world!</h1>
-    <button id="getButton" onclick="getSth()">get</button>
-    <button id="postButton" onclick="postSth(0, 0)">post</button>
-
-
-    <script type="text/javascript">
-        function getSth(){
-            axios.get('http://localhost:8080/hi?name=liubei')
-            .then(function(response) {
-                alert(response.data)
-            })
-            .catch(function(error){
-                alert(error)
-            });          
-        }
-
-        function postSth(a, b){
-            axios.post('http://localhost:8080/add', {
-                a: a,
-                b: b 
-            })
-            .then(function(response) {
-                alert(response.data)
-            })
-            .catch(function(error){
-                alert(error)
-            });
-        }
-
-        function postAdd(){
-            alert(document.getElementById('a').getAttribute("value"))
-        }
-    </script>
+    <div>
+        <h1>axios master</h1>
+    </div>
+    <div>
+        <button id="getButton" onclick="getSth()">get</button>
+        <button id="postButton" onclick="postSth()">post</button>
+        <button id="deleteButton">delete</button>
+    </div>
+    <div id="response">
+    </div>
+    <script src="main.js" type="text/javascript"></script>
 </body>
 
 </html>
