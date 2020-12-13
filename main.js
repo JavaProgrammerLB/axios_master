@@ -1,3 +1,11 @@
+const axiosInstance = axios.create({
+    baseURL: 'https://jsonplaceholder.typicode.com/posts',
+    timeout: 2000,
+    headers: {
+        'X-Custom-Header': 'foo'
+    }
+});
+
 axios.interceptors.request.use(
     config => {
         console.log(
@@ -40,6 +48,15 @@ function getByUserId() {
         }).catch(function (error) {
             alert(error)
         })
+}
+
+function getWithCustomInstance(){
+    axiosInstance.get("/")
+    .then(function (response) {
+        showResponse(response)
+    }).catch(function (error) {
+        alert(error)
+    })
 }
 
 function postSth() {
